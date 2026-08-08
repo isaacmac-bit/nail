@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Nail Appointment</title>
+    <style>
+        :root {
+            --primary-color: #db2777; /* Chic pink accent */
+            --bg-color: #fdf2f8;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .booking-container {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgb(219 39 119 / 0.1), 0 8px 10px -6px rgb(219 39 119 / 0.1);
+            width: 100%;
+            max-width: 480px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 1.75rem;
+            color: #9d174d;
+            text-align: center;
+        }
+
+        p.subtitle {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #374151;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(219, 39, 119, 0.15);
+        }
+
+        button {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #be185d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="booking-container">
+        <h2>✨ Nail Studio Booking</h2>
+        <p class="subtitle">Secure your spot ahead of time!</p>
+
+        <!-- Replace the action URL with your Formspree endpoint -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+            
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Doe">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="jane@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+            </div>
+
+            <div class="form-group">
+                <label for="service">Select Nail Service</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Choose a treatment...</option>
+                    <option value="Gel Manicure">Gel Manicure (1 hour)</option>
+                    <option value="Acrylic Full Set">Acrylic Full Set (2 hours)</option>
+                    <option value="Nail Art & Extensions">Nail Art & Custom Extensions (2.5 hours)</option>
+                    <option value="Pedicure">Luxury Pedicure (1 hour)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="datetime">Appointment Date & Time</label>
+                <input type="datetime-local" id="datetime" name="datetime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Nail Design Notes / Inspiration (Optional)</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Mention preferred colors, nail length, or reference ideas..."></textarea>
+            </div>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+
+</body>
+</html>
